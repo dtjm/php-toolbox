@@ -38,6 +38,7 @@ function bold_every_other($env) {
     return $response;
 }
 
+// Show the $_SERVER superglobal
 function show_server($env) {
     $response = $env['response'];
     $response[2] .= '<pre>' . print_r($_SERVER, true) . '</pre>';
