@@ -1,15 +1,13 @@
-<?php namespace Phlaya;
-
+<?php 
 // Minimalistic PHP middleware framework
 // --------------
-//
 // Each middleware returns an $env array which may contain:
-// - response
+// * response
 //
 // A response is an array of 3 items:
-// - HTTP status code (either integer or full text "HTTP/1.0 404: Not found")
-// - Array map of headers and header values
-// - String body to return
+// [0] HTTP status code (either integer or full text "HTTP/1.0 404: Not found")
+// [1] Array map of headers and header values
+// [2] String body to return
 
 // HELLO_WORLD - generates 3 lines of plain text
 function hello_world($env) {
@@ -55,9 +53,9 @@ function show_server($env) {
 }
 
 // The framework
-function run($middleware) {
+function run(array $middlewareArray) {
     $env = array();
-    foreach($middleware as $m) {
+    foreach($middlewareArray as $m) {
         $env['response'] = call_user_func($m, $env);
     }
 
@@ -76,3 +74,5 @@ run(array(
     'bold_every_other',
     'show_server'
 ));
+
+// vim: set ft=php:
