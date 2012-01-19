@@ -12,16 +12,22 @@
 
 // The framework
 function run(array $middlewareArray) {
+
+    // Initialize local state
     $env = array();
+
+    // Run the stack
     foreach($middlewareArray as $m) {
         $env['response'] = call_user_func($m, $env);
     }
 
+    // Render the headers
     header("HTTP/1.0 {$env['response'][0]}");
     foreach($env['response'][1] as $key => $val) {
         header("$key: $val");
     }
 
+    // Render the body
     echo $env['response'][2];
 }
 
