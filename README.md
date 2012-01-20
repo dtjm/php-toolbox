@@ -34,6 +34,7 @@ Types
 
 ### Response
 An array containing 3 items:
+
 1. HTTP response code (int)
 2. array map of response headers
 3. A string response body
@@ -41,6 +42,7 @@ An array containing 3 items:
 ### Env
 The $env variable is an array map passed to each middleware function so it has some
 context about what is going on. It may contain:
+
 - `response`
 
 ### Middleware function
