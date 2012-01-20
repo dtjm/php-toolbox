@@ -1,11 +1,21 @@
 <?php namespace Router;
 
-// Simple router that can handle static resource names
+// Sinatra-like router that can handle static resource names//
+// as well as do some pattern matching:
 // - /resource
-//
-// as well as do some pattern matching
 // - /resource/:id
-// - /resource/:id/:subid
+
+// USAGE
+// -----
+// Router\get('/resource', function() {
+//   echo "Matched the /resource!";
+// }
+//
+// Router\get('/resource/:id', function($params) {
+//   print_r($params);
+// }
+//
+// Router\run($_SERVER['REQUEST_URI'];);
 
 $routes = array(
             'GET' => array(),
@@ -48,6 +58,8 @@ function run($resource) {
             $paramNames = $matches[0];
             $regex = "@^$pattern@";
 
+            // Replace the named parameters with regular expressions and
+            // store the parameter names without the colon prefix
             foreach($paramNames as &$param) {
                 $regex = str_replace($param, "([^/]+)", $regex);
                 $param = substr($param, 1);
