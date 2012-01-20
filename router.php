@@ -1,11 +1,21 @@
 <?php namespace Router;
 
-// Simple router that can handle static resource names
+// Sinatra-like router that can handle static resource names//
+// as well as do some pattern matching:
 // - /resource
-//
-// as well as do some pattern matching
 // - /resource/:id
-// - /resource/:id/:subid
+
+// USAGE
+// -----
+// Router\get('/resource', function() {
+//   echo "Matched the /resource!";
+// }
+//
+// Router\get('/resource/:id', function($params) {
+//   print_r($params);
+// }
+//
+// Router\run($_SERVER['REQUEST_URI'];);
 
 $routes = array(
             'GET' => array(),
