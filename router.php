@@ -58,6 +58,8 @@ function run($resource) {
             $paramNames = $matches[0];
             $regex = "@^$pattern@";
 
+            // Replace the named parameters with regular expressions and
+            // store the parameter names without the colon prefix
             foreach($paramNames as &$param) {
                 $regex = str_replace($param, "([^/]+)", $regex);
                 $param = substr($param, 1);
