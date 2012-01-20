@@ -1,10 +1,58 @@
 <?php
 // Example Phlaya app
 include "./phlaya.php";
+include "./router.php";
 
 // HELLO_WORLD - generates 3 lines of plain text
 function hello_world($env) {
-    return array(200, array("Content-type" => "text/plain"), "Hello world\nlorem ipsum dolor\nsit amet");
+    return array(
+        200,
+        array("Content-type" => "text/plain"),
+        "Hello world\nlorem ipsum dolor\nsit amet"
+    );
+}
+
+function rest_app($env) {
+    Router\get("/resource/:id/:subid", function($params) {
+        return array(
+            200,
+            array("Content-type" => "text/plain"),
+            "id = {$params['id']}, subid = {$params['subid']}"
+        );
+    });
+    Router\get("/resource", function(){
+        return array(
+            200,
+            array("Content-type" => "text/plain"),
+            "This is a resource"
+        );
+    });
+
+    Router\post("/resource", function(){
+        return array(
+            201,
+            array("Content-type" => "text/plain"),
+            "Created"
+        );
+    });
+
+    Router\put("/resource/:id", function($params) {
+        return array(
+            201,
+            array("Location" => "/resource/{$params['id']}"),
+            NULL
+        );
+    });
+
+    $parts = explode("index.php", $_SERVER['REQUEST_URI']);
+    $resource = "";
+    if(count($parts) == 2) {
+        $resource = $parts[1];
+    } else {
+        $resource = "/";
+    }
+
+    return Router\run($resource);
 }
 
 // TEXT_TO_HTML - converts NL to <br/>
@@ -48,10 +96,10 @@ function show_server($env) {
 
 // The entry point
 Phlaya\run(array(
-    'hello_world',
+    'rest_app',
     'text_to_html',
     'bold_every_other',
-    'show_server'
+    // 'show_server'
 ));
 
 // vim: set ft=php:

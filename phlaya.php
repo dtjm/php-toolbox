@@ -2,7 +2,7 @@
 
 // Minimalistic PHP middleware framework
 // --------------
-// Each middleware returns an $env array which may contain:
+// Each middleware returns an $env array map which may contain:
 // * response
 //
 // A response is an array of 3 items:
