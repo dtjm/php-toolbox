@@ -1,7 +1,8 @@
 Phlaya - Microscopic PHP middleware and routing stack
 ======
 
-*Requires PHP >= 5.3*
+*Adapted from [http://rack.rubyforge.org/](Rack) and [http://sinatrarb.org](Sinatra) for PHP >= 5.3*
+
 
 How to use the middleware stack:
 
