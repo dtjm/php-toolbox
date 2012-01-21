@@ -69,7 +69,7 @@ key.
 Functions
 ---------
 
-### Router\{get,post,put,delete}(string $resourcePattern, callback function([array $params]))
+### Router\\{get,post,put,delete}(string $resourcePattern, callback function([array $params]))
 Handle the specified HTTP method matching the $resourcePattern to the URI called in `run()`.
 If it matches, call the callback function.
 
