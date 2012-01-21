@@ -1,6 +1,8 @@
 Phlaya - Microscopic PHP middleware and routing stack
 ======
 
+*Requires PHP >= 5.3*
+
 How to use the middleware stack:
 
     function hello_world(array &$env) {
@@ -66,11 +68,14 @@ key.
 Functions
 ---------
 
-### Router\get(string $resourcePattern, callback function([array $params]))
-### Router\post(string $resourcePattern, callback function([array $params]))
-### Router\put(string $resourcePattern, callback function([array $params]))
-### Router\delete(string $resourcePattern, callback function([array $params]))
-### Router\run(string $uri)
+### Router\{get,post,put,delete}(string $resourcePattern, callback function([array $params]))
+Handle the specified HTTP method matching the $resourcePattern to the URI called in `run()`.
+If it matches, call the callback function.
 
+### Router\run(string $uri)
+Execute the entire routing stack. This will either result in one of your callbacks being run,
+or it will return a 404 response.  The response is in the form of a **Phlaya** response:
+
+    array(404, array(), NULL);
 
 `vim: set ft=markdown:`
