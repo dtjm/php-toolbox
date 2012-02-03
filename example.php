@@ -1,6 +1,6 @@
 <?php
 // Example Phlaya app
-include "./phlaya.php";
+include "./middleware.php";
 include "./router.php";
 
 // HELLO_WORLD - generates 3 lines of plain text
@@ -95,7 +95,7 @@ function show_server($env) {
 }
 
 // The entry point
-Phlaya\run(array(
+Middleware\run(array(
     'rest_app',
     'text_to_html',
     'bold_every_other',
