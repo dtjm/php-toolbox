@@ -1,4 +1,4 @@
-<?php namespace Phlaya;
+<?php namespace Middleware;
 
 // Minimalistic PHP middleware framework
 // --------------
