@@ -1,9 +1,8 @@
-Phlaya - Microscopic PHP middleware and routing stack for PHP 5.3+
+PHP Toolbox - PHP web framework tools for PHP 5.3+
 ======
 
-Phlaya is a microscopic PHP web framework. 
-Use it when you are stuck with PHP (5.3+) and you want to whip up a quick web service.
-The jury is out on whether you would want to use this for a large enterprise application.
+PHP Toolbox provides a set of microscopic libraries you can use 
+when you are stuck with PHP (5.3+) and you want to whip up a quick web service.
 
 At it's core is a [http://rack.rubyforge.org/](Rack)-inspired middleware stack which starts you off
 with just a little bit of structure. On the request side, just use 
@@ -48,7 +47,7 @@ Middleware stack usage
     // Response array as defined below. They can communicate with
     // each other through the Env array which is passed from one
     // to the next by reference.
-    Phlaya\run(array(
+    Middleware\run(array(
         'rest_app',
         'text_to_html'
     ));
@@ -72,7 +71,7 @@ context about what is going on. It may contain:
 Functions
 ---------
 
-### Phlaya\run(array $middlewareFunctionNames)
+### Middleware\run(array $middlewareFunctionNames)
 The `run()` function takes an array of strings which are the names of
 middleware functions. Each function should take an $env array map by
 reference and return a response.
