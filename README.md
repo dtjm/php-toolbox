@@ -3,6 +3,7 @@ Phlaya - Microscopic PHP middleware and routing stack for PHP 5.3+
 
 Phlaya is a microscopic PHP web framework. 
 Use it when you are stuck with PHP (5.3+) and you want to whip up a quick web service.
+The jury is out on whether you would want to use this for a large enterprise application.
 
 At it's core is a [http://rack.rubyforge.org/](Rack)-inspired middleware stack which starts you off
 with just a little bit of structure. On the request side, just use 
@@ -14,8 +15,9 @@ into that sort of thing.
 A few design goals:
 * **Namespaced functions over static methods:** Why inherit from abstract classes when you have anonymous functions?
   Why put a controller in a class? Now that we have namespaces, just use namespaced functions.
-* **Composition over inheritance:** Selective use the tools you need, and don't use what you don't need.
+* **Composition over inheritance:** Include the tools you need, and don't load what you don't need.
 * **Minimalist, i.e. be like Arch Linux:** Start with a bare environment and add things as you need them.
+* **Get out of the way:** Don't force any URL-rewriting style.                        
 * **Idiomatic PHP:** Don't do anything that PHP has already done.                                        
 
 Middleware stack usage
