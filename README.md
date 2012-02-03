@@ -85,6 +85,10 @@ Patterns can be literal like `/resource` or they can be contain named parameters
 `/resource/:id`.  In this case, the callback would supply a `$params` array map containing the `id`
 key.
 
+Router usage
+------------
+See [https://github.com/dtjm/phlaya/blob/master/example.php](example.php).
+
 Functions
 ---------
 
