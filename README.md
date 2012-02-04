@@ -14,9 +14,13 @@ into that sort of thing.
 A few design goals:
 - **Namespaced functions over static methods:** Why inherit from abstract classes when you have anonymous functions?
   Why put a controller in a class? Now that we have namespaces, just use namespaced functions.
+
 - **Composition over inheritance:** Include the tools you need, and don't load what you don't need.
+
 - **Minimalist, i.e. be like Arch Linux:** Start with a bare environment and add things as you need them.
+
 - **Get out of the way:** Don't force any URL-rewriting style.                        
+
 - **Idiomatic PHP:** Don't do anything that PHP has already done.                                        
 
 Middleware stack usage
