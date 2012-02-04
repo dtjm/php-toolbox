@@ -4,11 +4,11 @@ PHP Toolbox - PHP web framework tools for PHP 5.3+
 PHP Toolbox provides a set of microscopic libraries you can use 
 when you are stuck with PHP (5.3+) and you want to whip up a quick web service.
 
-At it's core is a [http://rack.rubyforge.org/](Rack)-inspired middleware stack which starts you off
+At it's core is a [Rack](http://rack.rubyforge.org/)-inspired middleware stack which starts you off
 with just a little bit of structure. On the request side, just use 
 what PHP already provides (read: use the `$_SERVER` and `$_REQUEST` superglobals).
 
-It also provides a [http://sinatrarb.org](Sinatra)-like routing engine in case you are 
+It also provides a [Sinatra](http://sinatrarb.org)-like routing engine in case you are 
 into that sort of thing.
 
 A few design goals:
