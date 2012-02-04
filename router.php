@@ -92,7 +92,7 @@ function run($resource) {
     }
 
     return array(
-        404,
+        500,
         array(),
         NULL
     );
