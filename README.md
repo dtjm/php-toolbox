@@ -12,6 +12,7 @@ It also provides a [http://sinatrarb.org](Sinatra)-like routing engine in case y
 into that sort of thing.
 
 A few design goals:
+
 - **Namespaced functions over static methods:** Why inherit from abstract classes when you have anonymous functions?
   Why put a controller in a class? Now that we have namespaces, just use namespaced functions.
 
